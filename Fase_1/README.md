@@ -45,3 +45,37 @@ Ejecutamos la siguente consulta para revisar la limpieza de los datos:
 <div align="center">
   <img src="img/03.png" alt="BQ03"/>
 </div>
+
+
+## 3.Optimización con particiones y clustering
+
+Ejecutamos la siguente consulta para crear el esquema y la tabla derivada:
+
+   ```sql
+--Creación del esquema o tabla
+
+CREATE SCHEMA IF NOT EXISTS `seminariosistemas2.nyc_taxi`;
+
+--Creacion de tabla derivada
+
+CREATE OR REPLACE TABLE `seminariosistemas2.nyc_taxi.yellow_2022_subset` AS
+    SELECT
+        pickup_datetime,
+        dropoff_datetime,
+        pickup_location_id,
+        dropoff_location_id,
+        passenger_count,
+        trip_distance,
+        fare_amount,
+        tip_amount,
+        total_amount,
+        payment_type
+    FROM `bigquery-public-data.new_york_taxi_trips.tlc_yellow_trips_2022`
+        WHERE pickup_datetime IS NOT NULL
+        AND dropoff_datetime IS NOT NULL;
+   ```
+
+
+<div align="center">
+  <img src="img/04.png" alt="BQ04"/>
+</div>
