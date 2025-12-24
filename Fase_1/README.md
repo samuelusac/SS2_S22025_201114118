@@ -10,7 +10,7 @@
   <img src="img/01.png" alt="BQ01"/>
 </div>
 
-## 2.Realizar consultas SQL 
+## 2. Realizar consultas SQL 
 
 ### -Información del dataset
 
@@ -47,7 +47,7 @@ Ejecutamos la siguente consulta para revisar la limpieza de los datos:
 </div>
 
 
-## 3.Optimización con particiones y clustering
+## 3. Optimización con particiones y clustering
 
 Ejecutamos la siguente consulta para crear el esquema y la tabla derivada:
 
